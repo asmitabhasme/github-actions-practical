@@ -1,0 +1,27 @@
+name: GitHub Actions Task
+
+on:
+  workflow_dispatch:
+
+jobs:
+  task:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Show date
+        run: date
+
+      - name: Create text file
+        run: |
+          echo "This is a GitHub Actions task." > task.txt
+          cat task.txt
+
+      - name: Run Python program
+        run: |
+          python3 -c "print('Hello from Python program!')"
